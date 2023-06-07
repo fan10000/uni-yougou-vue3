@@ -6,8 +6,12 @@ export const getSwiperList = () =>
 
 /*  获取分类导航的数据 */
 export const getNavList = () =>
-	ajax.get('public/v1/home/catitems')
+	ajax.get('/public/v1/home/catitems')
 
 /*  获取楼层商品的数据列表 */
 export const getFloorList = () =>
-	ajax.get('public/v1/home/floordata')
+	ajax.get('/public/v1/home/floordata')
+
+/*  获取分类数据列表 */
+export const getCateList = () =>
+	ajax.get('/public/v1/categories')
