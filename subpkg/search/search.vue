@@ -97,13 +97,13 @@
 	// 商品搜索结果点击跳转事件
 	const goDetail = (goods_id) => {
 		uni.navigateTo({
-			url: '/subpkg/goods_detail/goods_detail?goods_id' + goods_id
+			url: '/subpkg/goods_detail/goods_detail?goods_id=' + goods_id
 		})
 	}
 	// 搜索历史记录点击事件
 	const goGoodsList = (keyword) => {
 		uni.navigateTo({
-			url: '/subpkg/goods_list/goods_list?query' + keyword
+			url: '/subpkg/goods_list/goods_list?query=' + keyword
 		})
 	}
 </script>

@@ -19,3 +19,7 @@ export const getCateList = () =>
 /*  根据搜索关键词，搜索商品 */
 export const getSearchList = (params) =>
 	ajax.get('/public/v1/goods/qsearch', params)
+
+/*  获取商品列表搜索 */
+export const getGoodsList = (params) =>
+	ajax.get('/public/v1/goods/search', params)
