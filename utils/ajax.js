@@ -8,9 +8,15 @@ const instance = ajax.create({
 })
 
 // 添加请求拦截器
+// 请求开始之前做一些事情
 instance.interceptors.request.use(
 	config => {
 		// 在发送请求前做些什么
+
+		// 显示 loading 提示框
+		uni.showLoading({
+			title: "数据加载中"
+		})
 
 		return config
 	},
@@ -22,9 +28,14 @@ instance.interceptors.request.use(
 )
 
 // 添加响应拦截器
+// 请求完成之后做一些事情
 instance.interceptors.response.use(
 	response => {
 		// 对响应数据做些什么
+
+		// 隐藏 loading 提示框
+		uni.hideLoading()
+
 		if (response.data.meta.status !== 200) {
 			uni.showToast({
 				title: '数据请求失败！',

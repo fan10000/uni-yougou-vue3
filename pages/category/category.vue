@@ -2,11 +2,9 @@
 	<view>
 		<!-- 搜索栏 -->
 		<view class="search-container" @click="goSearch">
-			<view class="search-box">
-				<uni-icons type="search" size="18"></uni-icons>
-				<text>搜索</text>
-			</view>
+			<uni-search-bar placeholder="搜索" :radius="100" bgColor="#fff" readonly></uni-search-bar>
 		</view>
+
 
 		<!-- 商品分类滚动区域 -->
 		<view class="scroll-container">
@@ -92,33 +90,14 @@
 </script>
 
 <style lang="scss">
+	.uni-searchbar {
+		background-color: #F8F8F8;
+	}
+
 	.search-container {
 		position: sticky;
 		top: 0;
 		z-index: 999;
-		display: flex;
-		align-items: center;
-		box-sizing: border-box;
-		padding: 0 20rpx;
-		width: 100%;
-		height: 100rpx;
-		background-color: #f7f8fA;
-
-		.search-box {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			width: 100%;
-			height: 72rpx;
-			background-color: #fff;
-			border-radius: 35rpx;
-
-			text {
-				font-size: 30rpx;
-				margin-left: 10rpx;
-			}
-
-		}
 	}
 
 	.scroll-container {

@@ -15,3 +15,7 @@ export const getFloorList = () =>
 /*  获取分类数据列表 */
 export const getCateList = () =>
 	ajax.get('/public/v1/categories')
+
+/*  根据搜索关键词，搜索商品 */
+export const getSearchList = (params) =>
+	ajax.get('/public/v1/goods/qsearch', params)
