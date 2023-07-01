@@ -23,3 +23,14 @@ export const getSearchList = (params) =>
 /*  获取商品列表搜索 */
 export const getGoodsList = (params) =>
 	ajax.get('/public/v1/goods/search', params)
+
+/*  获取商品详情数据 */
+export const getGoodsDetail = (params) =>
+	ajax.get('/public/v1/goods/detail', params)
+
+/*  登录凭证校验。
+通过 wx.login 接口获得临时登录凭证 code 后传到开发者服务器调用此接口完成登录流程，
+使用 code 换取 openid、unionid、session_key 等信息 
+*/
+export const getToken = (params) =>
+	ajax.post('/public/v1/users/wxlogin', params)

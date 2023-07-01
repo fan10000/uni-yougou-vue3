@@ -37,8 +37,9 @@
 
 <script setup>
 	import { ref } from "vue"
-	import { onLoad } from '@dcloudio/uni-app'
-	import { getCateList } from "@/services/index.js"
+	import { onLoad, onShow } from '@dcloudio/uni-app'
+	import { getCateList } from "@/services"
+	import { useCartStore } from "@/stores"
 
 	const goSearch = () => {
 		uni.navigateTo({
@@ -87,6 +88,9 @@
 		loadWindowHeight()
 		loadCateList()
 	})
+	// 为 tabBar 设置数字徽标
+	const store = useCartStore()
+	store.setTabBarBadge()
 </script>
 
 <style lang="scss">

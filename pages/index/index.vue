@@ -65,8 +65,9 @@
 
 <script setup>
 	import { ref } from "vue"
-	import { onLoad } from '@dcloudio/uni-app'
-	import { getSwiperList, getNavList, getFloorList } from "@/services/index.js"
+	import { onLoad, onShow } from '@dcloudio/uni-app'
+	import { getSwiperList, getNavList, getFloorList } from "@/services"
+	import { useCartStore } from "@/stores"
 
 	// //导航栏高度
 	const navHeight = ref('')
@@ -127,6 +128,10 @@
 			})
 		}
 	}
+
+	// 为 tabBar 设置数字徽标
+	const store = useCartStore()
+	store.setTabBarBadge()
 </script>
 
 <style lang="scss">
